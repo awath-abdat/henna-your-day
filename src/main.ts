@@ -1,7 +1,7 @@
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { FontLoader } from "three/addons/loaders/FontLoader.js";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 import { bodyFontUrl, modelUrl } from "./assets/assets";
 
@@ -36,7 +36,7 @@ fontLoader.load(bodyFontUrl, function (font) {
 	});
 
 	const message = "Henna Your Day";
-	const shapes = font.generateShapes(message, 100);
+	const shapes = font.generateShapes(message, 50);
 	const geometry = new THREE.ShapeGeometry(shapes);
 	geometry.computeBoundingBox();
 	if (geometry.boundingBox === null) return;
